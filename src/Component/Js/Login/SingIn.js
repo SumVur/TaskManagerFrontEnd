@@ -12,7 +12,7 @@ function SingIn(){
         <div className="btn-animate">
           <a className="btn-signin">Sign in</a>
         </div>
-                      </form>
+        </form>
     )
 }
 
