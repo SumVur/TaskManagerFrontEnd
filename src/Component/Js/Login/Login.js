@@ -3,11 +3,24 @@ import '../../Css/Login.css';
 import SingIn from './SingIn';
 import SingUp from './SingUp';
 import './Login_Jquery'
+import Loader from '../Loader'
 
 function Login(){
+    const [loading, setLoading] = React.useState(false)
 
-
+    function onClickSingIn(){
+        console.log("onClickSingIn");
+        setTimeout(() => {
+            setLoading(true);
+        }, 2000);
+    }
+    function onClickSingUp(){
+        console.log("onClickSingUp");
+    }
     return(
+<div>
+    {
+      loading===true?<Loader/>:
         <div className="container">
             <div className="frame">
                 <div className="nav">
@@ -17,21 +30,16 @@ function Login(){
                     </ul>
                 </div>
                 <div ng-app="true" ng-init="checked = false">
-                    <SingIn></SingIn>
-                    <SingUp></SingUp>
+                    <SingIn onClickSingIn={onClickSingIn}></SingIn>
+                    <SingUp onClickSingUp={onClickSingUp}></SingUp>
                 </div>
                 <div className="forgot">
                   <a href="#">Forgot your password?</a>
                 </div>
-      
-                <div>
-                    <div className="cover-photo"></div>
-                    <div className="profile-photo"></div>
-                    <h1 className="welcome">Welcome, Chris</h1>
-                    <a className="btn-goback" value="Refresh" onClick="history.go()">Go back</a>
-                </div>
             </div>
         </div>
+        }
+    </div>
     )
 }
 

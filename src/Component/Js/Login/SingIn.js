@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SingIn(){
+function SingIn({onClickSingIn}){
     return(
         <form className="form-signin" action="" method="post" name="form">
         <label htmlFor="username">Username</label>
@@ -10,7 +10,7 @@ function SingIn(){
         <input type="checkbox" id="checkbox"/>
         <label htmlFor="checkbox" ><span className="ui"></span>Keep me signed in</label>
         <div className="btn-animate">
-          <a className="btn-signin">Sign in</a>
+          <a className="btn-signin"  onClick={()=>onClickSingIn()}>Sign in</a>
         </div>
         </form>
     )

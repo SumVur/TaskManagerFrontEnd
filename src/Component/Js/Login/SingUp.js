@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SingUp(){
+function SingUp({onClickSingUp}){
     return(
         <form className="form-signup" action="" method="post" name="form">
         <label htmlFor="fullname">Full name</label>
@@ -11,8 +11,8 @@ function SingUp(){
         <input className="form-styling" type="text" name="password" placeholder=""/>
         <label htmlFor="confirmpassword">Confirm password</label>
         <input className="form-styling" type="text" name="confirmpassword" placeholder=""/>
-        <a ng-click="checked = !checked" className="btn-signup">Sign Up</a>
-                      </form>
+        <a className="btn-signup" onClick={()=>onClickSingUp()}>Sign Up</a>
+     </form>
     )
 }
 
