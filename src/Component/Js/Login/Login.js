@@ -10,6 +10,7 @@ function Login(){
 
     function onClickSingIn(){
         console.log("onClickSingIn");
+        //Запрос на сервер и вызов функции из Body
         setTimeout(() => {
             setLoading(true);
         }, 2000);
