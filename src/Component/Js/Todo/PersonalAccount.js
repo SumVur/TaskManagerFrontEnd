@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
-import TodoList from './Todo/TodoList'
+import TodoList from './TodoList'
 import Context from './context'
 import Loader from '../Loader'
-import Modal from './Modal/Modal'
+import '../../Css/PersonalAccount.css'
 
 const AddTodo = React.lazy(
-  () =>
-    new Promise(resolve => {
-      setTimeout(() => {
-        resolve(import('./Todo/AddTodo'))
-      }, 3000)
-    })
-)
+    () =>
+      new Promise(resolve => {
+        setTimeout(() => {
+          resolve(import('./AddTodo'))
+        }, 3000)
+      })
+  )
 
-function App() {
-  const [todos, setTodos] = React.useState([])
+function PersonalAccount(){
+ const [todos, setTodos] = React.useState([])
   const [loading, setLoading] = React.useState(true)
 
   useEffect(() => {
@@ -58,9 +58,7 @@ function App() {
   return (
     <Context.Provider value={{ removeTodo }}>
       <div className='wrapper'>
-        <h1>React tutorial</h1>
-        <Modal />
-
+        <h1 style={{color:"darkgray"}}>Todo Task</h1>
         <React.Suspense fallback={<Loader />}>
           <AddTodo onCreate={addTodo} />
         </React.Suspense>
@@ -76,4 +74,4 @@ function App() {
   )
 }
 
-export default App
+export default PersonalAccount;

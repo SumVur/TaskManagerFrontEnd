@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import Context from '../context'
+import Context from './context'
 
 const styles = {
   li: {
@@ -10,7 +10,8 @@ const styles = {
     padding: '.5rem 1rem',
     border: '1px solid #ccc',
     borderRadius: '4px',
-    marginBottom: '.5rem'
+    marginBottom: '.5rem',
+    color:"Red "
   },
   input: {
     marginRight: '1rem'

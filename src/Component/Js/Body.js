@@ -1,13 +1,17 @@
 import React from 'react';
 import Login from './Login/Login';
+import {useHistory} from 'react-router-dom';
+import PersonalAccount from './Todo/PersonalAccount'
 
 function Body(){
-    const [loading, setLoading] = React.useState(true)
-
+   
+    function GoToAccount(){
+        
+    }
     
     return(
         <div>
-        <Login ></Login>
+        <PersonalAccount></PersonalAccount>
         </div>
     )
 }
